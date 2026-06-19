@@ -1,0 +1,24 @@
+{
+  "id": "sTOHb8MdKbJ1w8tS",
+  "name": "HC-1: Patient Discharge & Care Continuity Agent",
+  "description": "Healthcare agent that monitors EHR discharge events, uses AI to assess 30-day readmission risk, and automatically routes to urgent physician alerts, patient follow-up emails, or routine care plan logging based on risk level.",
+  "trigger": "Webhook (POST /webhook/patient-discharge)",
+  "nodes": [
+    "EHR Discharge Event",
+    "Normalize Discharge Payload",
+    "Patient Risk Assessment Agent (GPT-4o)",
+    "Risk Level Router",
+    "Alert Physician - Urgent (Gmail)",
+    "Notify Care Team Slack",
+    "Patient Follow-up Reminder (Gmail)",
+    "Log Routine Care Plan"
+  ],
+  "n8n_url": "https://aravind5.app.n8n.cloud/workflow/sTOHb8MdKbJ1w8tS",
+  "credentials_required": [
+    "OpenAI API Key",
+    "Gmail OAuth2",
+    "Slack OAuth2",
+    "Care API Bearer Token"
+  ],
+  "domain": "Healthcare"
+}

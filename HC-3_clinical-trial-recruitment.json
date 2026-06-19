@@ -1,0 +1,25 @@
+{
+  "id": "jnaNp7WZAlQw6v8o",
+  "name": "HC-3: Clinical Trial Recruitment & Screening Agent",
+  "description": "Healthcare agent that daily screens active patients against clinical trial inclusion/exclusion criteria using AI, automatically sends personalized outreach emails to eligible candidates, and logs all screening results to a trial CRM.",
+  "trigger": "Schedule (Daily at 8:00 AM)",
+  "nodes": [
+    "Daily Trial Recruitment Run",
+    "Fetch Patient Candidates",
+    "Split Patient Candidates",
+    "Process Candidates in Batches",
+    "Trial Eligibility Screening Agent (GPT-4o)",
+    "Patient Eligible for Trial?",
+    "Send Trial Outreach Email (Gmail)",
+    "Log Eligible Candidate to CRM",
+    "Log Ineligible Candidate"
+  ],
+  "n8n_url": "https://aravind5.app.n8n.cloud/workflow/jnaNp7WZAlQw6v8o",
+  "credentials_required": [
+    "OpenAI API Key",
+    "Gmail OAuth2",
+    "EHR API Bearer Token",
+    "Trial CRM Bearer Token"
+  ],
+  "domain": "Healthcare"
+}

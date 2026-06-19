@@ -1,0 +1,23 @@
+{
+  "id": "PcioiEXandyi4DhB",
+  "name": "HC-2: Insurance Prior Authorization Automation Agent",
+  "description": "Healthcare agent that processes prior authorization requests from EHRs, uses AI to assess medical necessity against payer criteria, auto-submits approved requests, and notifies providers of outcomes with required documentation gaps.",
+  "trigger": "Webhook (POST /webhook/prior-auth-request)",
+  "nodes": [
+    "Prior Auth Request Webhook",
+    "Normalize Auth Request",
+    "Check Insurance Eligibility",
+    "Prior Auth Assessment Agent (GPT-4o)",
+    "Auth Criteria Met?",
+    "Submit Prior Auth to Payer",
+    "Notify Provider - Auth Submitted (Gmail)",
+    "Notify Provider - Criteria Not Met (Gmail)"
+  ],
+  "n8n_url": "https://aravind5.app.n8n.cloud/workflow/PcioiEXandyi4DhB",
+  "credentials_required": [
+    "OpenAI API Key",
+    "Gmail OAuth2",
+    "Payer API Bearer Token"
+  ],
+  "domain": "Healthcare"
+}
